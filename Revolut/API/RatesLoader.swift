@@ -13,12 +13,12 @@ class RatesLoader {
         addStatusBarActivityIndicator()
         let url = "https://revolut.duckdns.org/latest?base=" + baseCode
         Alamofire.request(url).responseJSON { [weak self] (response) in
-            guard let rawValue = response.result.value as? [String : Any], let rawRates = rawValue["rates"] as? [String : Any] else {
+            guard let rawValue = response.result.value as? [String : Any] else {
                 self?.handleLoadingError()
                 return
             }
 
-            guard let rates = ResultsParser.parseResults(rawRates) else  {
+            guard let rates = ResultsParser.parseResults(rawValue) else  {
                 self?.handleParsingError()
                 return
             }

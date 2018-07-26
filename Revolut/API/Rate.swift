@@ -1,4 +1,4 @@
 struct Rate {
     let code: String
-    let value: Float    
+    let value: Double
 }

@@ -18,6 +18,7 @@ class RateCell: UICollectionViewCell {
 
     func setup(_ rate: Rate) {
         codeLabel?.text = rate.code
+        amountField?.text = String(rate.value)
     }
 
 }
