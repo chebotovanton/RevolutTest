@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28ABE725428B549CCC7B0FEC /* Pods_Revolut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88190832248CB29274E6A6CA /* Pods_Revolut.framework */; };
 		9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF2210A328C008F2827 /* AppDelegate.swift */; };
-		9F31EAF5210A328C008F2827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF4210A328C008F2827 /* ViewController.swift */; };
+		9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF4210A328C008F2827 /* RatesVC.swift */; };
 		9F31EAF8210A328C008F2827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F31EAF6210A328C008F2827 /* Main.storyboard */; };
 		9F31EAFA210A328D008F2827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F31EAF9210A328D008F2827 /* Assets.xcassets */; };
 		9F31EAFD210A328D008F2827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F31EAFB210A328D008F2827 /* LaunchScreen.storyboard */; };
@@ -34,9 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		656CA5EE26D4C47382AE3CA3 /* Pods-Revolut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolut.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revolut/Pods-Revolut.release.xcconfig"; sourceTree = "<group>"; };
+		72D6862AFEA191183B313C81 /* Pods-Revolut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revolut/Pods-Revolut.debug.xcconfig"; sourceTree = "<group>"; };
+		88190832248CB29274E6A6CA /* Pods_Revolut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revolut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F31EAEF210A328C008F2827 /* Revolut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revolut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F31EAF2210A328C008F2827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F31EAF4210A328C008F2827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F31EAF4210A328C008F2827 /* RatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVC.swift; sourceTree = "<group>"; };
 		9F31EAF7210A328C008F2827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F31EAF9210A328D008F2827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F31EAFC210A328D008F2827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28ABE725428B549CCC7B0FEC /* Pods_Revolut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17C9082DC6A7E224B5700103 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72D6862AFEA191183B313C81 /* Pods-Revolut.debug.xcconfig */,
+				656CA5EE26D4C47382AE3CA3 /* Pods-Revolut.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		49C338F29208AF8B5D1AEE1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88190832248CB29274E6A6CA /* Pods_Revolut.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F31EAE6210A328C008F2827 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				9F31EB06210A328D008F2827 /* RevolutTests */,
 				9F31EB11210A328D008F2827 /* RevolutUITests */,
 				9F31EAF0210A328C008F2827 /* Products */,
+				17C9082DC6A7E224B5700103 /* Pods */,
+				49C338F29208AF8B5D1AEE1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9F31EAF2210A328C008F2827 /* AppDelegate.swift */,
-				9F31EAF4210A328C008F2827 /* ViewController.swift */,
+				9F31EAF4210A328C008F2827 /* RatesVC.swift */,
 				9F31EAF6210A328C008F2827 /* Main.storyboard */,
 				9F31EAF9210A328D008F2827 /* Assets.xcassets */,
 				9F31EAFB210A328D008F2827 /* LaunchScreen.storyboard */,
@@ -132,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F31EB17210A328D008F2827 /* Build configuration list for PBXNativeTarget "Revolut" */;
 			buildPhases = (
+				EE7D26DE6A4A61BA39C94CFD /* [CP] Check Pods Manifest.lock */,
 				9F31EAEB210A328C008F2827 /* Sources */,
 				9F31EAEC210A328C008F2827 /* Frameworks */,
 				9F31EAED210A328C008F2827 /* Resources */,
@@ -251,12 +276,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EE7D26DE6A4A61BA39C94CFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Revolut-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F31EAEB210A328C008F2827 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F31EAF5210A328C008F2827 /* ViewController.swift in Sources */,
+				9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */,
 				9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,15 +474,13 @@
 		};
 		9F31EB18210A328D008F2827 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D6862AFEA191183B313C81 /* Pods-Revolut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = Revolut/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.Revolut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -446,15 +490,13 @@
 		};
 		9F31EB19210A328D008F2827 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656CA5EE26D4C47382AE3CA3 /* Pods-Revolut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = Revolut/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.Revolut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -470,11 +512,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -491,11 +529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -511,11 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -531,11 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
