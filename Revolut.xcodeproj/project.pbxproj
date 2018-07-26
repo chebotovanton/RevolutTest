@@ -17,6 +17,9 @@
 		9F31EB13210A328D008F2827 /* RevolutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EB12210A328D008F2827 /* RevolutUITests.swift */; };
 		9F31EB22210A3A25008F2827 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EB20210A3A25008F2827 /* RateCell.swift */; };
 		9F31EB23210A3A25008F2827 /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F31EB21210A3A25008F2827 /* RateCell.xib */; };
+		9F31EB25210A4523008F2827 /* RatesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EB24210A4523008F2827 /* RatesLoader.swift */; };
+		9F31EB33210A47D2008F2827 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EB32210A47D2008F2827 /* Rate.swift */; };
+		9F31EB35210A4CD2008F2827 /* ResultsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EB34210A4CD2008F2827 /* ResultsParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		9F31EB14210A328D008F2827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F31EB20210A3A25008F2827 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		9F31EB21210A3A25008F2827 /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
+		9F31EB24210A4523008F2827 /* RatesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLoader.swift; sourceTree = "<group>"; };
+		9F31EB32210A47D2008F2827 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		9F31EB34210A4CD2008F2827 /* ResultsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		9F31EAF1210A328C008F2827 /* Revolut */ = {
 			isa = PBXGroup;
 			children = (
+				9F31EB31210A47BD008F2827 /* API */,
 				9F31EAF2210A328C008F2827 /* AppDelegate.swift */,
 				9F31EAF4210A328C008F2827 /* RatesVC.swift */,
 				9F31EB20210A3A25008F2827 /* RateCell.swift */,
@@ -155,6 +162,16 @@
 			path = RevolutUITests;
 			sourceTree = "<group>";
 		};
+		9F31EB31210A47BD008F2827 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9F31EB24210A4523008F2827 /* RatesLoader.swift */,
+				9F31EB32210A47D2008F2827 /* Rate.swift */,
+				9F31EB34210A4CD2008F2827 /* ResultsParser.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +183,7 @@
 				9F31EAEB210A328C008F2827 /* Sources */,
 				9F31EAEC210A328C008F2827 /* Frameworks */,
 				9F31EAED210A328C008F2827 /* Resources */,
+				BB7F02D26E851BD7F3FE1E19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +302,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BB7F02D26E851BD7F3FE1E19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Revolut/Pods-Revolut-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Revolut/Pods-Revolut-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EE7D26DE6A4A61BA39C94CFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,7 +353,10 @@
 			files = (
 				9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */,
 				9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */,
+				9F31EB25210A4523008F2827 /* RatesLoader.swift in Sources */,
+				9F31EB33210A47D2008F2827 /* Rate.swift in Sources */,
 				9F31EB22210A3A25008F2827 /* RateCell.swift in Sources */,
+				9F31EB35210A4CD2008F2827 /* ResultsParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

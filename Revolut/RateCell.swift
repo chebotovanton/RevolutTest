@@ -15,4 +15,9 @@ class RateCell: UICollectionViewCell {
         amountField?.keyboardType = .decimalPad
     }
 
+
+    func setup(_ rate: Rate) {
+        codeLabel?.text = rate.code
+    }
+
 }

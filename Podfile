@@ -5,4 +5,7 @@ use_frameworks!
 
 target 'Revolut' do
     pod 'SwiftLint'
+    pod 'Alamofire', '~> 4.7'
+    pod 'AlamofireObjectMapper', '~> 5.0'
+    pod "PromiseKit", "~> 6.0"
 end

@@ -1,8 +1,12 @@
 import UIKit
 
-class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, RatesLoaderDelegate {
 
     @IBOutlet private weak var collectionView: UICollectionView?
+
+    private let ratesLoader = RatesLoader()
+
+    private var rates: [Rate] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,12 +19,14 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         collectionView?.setCollectionViewLayout(layout, animated: false)
         collectionView?.alwaysBounceVertical = true
 
+        ratesLoader.delegate = self
+        ratesLoader.loadRates(baseCode: "EUR")
     }
 
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return rates.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -33,9 +39,19 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RateCell.kCellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RateCell.kCellIdentifier, for: indexPath) as! RateCell
+
+        let rate = rates[indexPath.item]
+        cell.setup(rate)
 
         return cell
+    }
+
+    //MARK: - RatesLoaderDelegate
+
+    func didReceiveRates(_ rates: [Rate]) {
+        self.rates = rates
+        collectionView?.reloadData()
     }
 
 }
