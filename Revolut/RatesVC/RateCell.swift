@@ -27,7 +27,8 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
         codeLabel?.text = rate.code
         descriptionLabel?.text = Locale.current.localizedString(forCurrencyCode: rate.code)
         //warning: move to some converter
-        amountField?.text = String(RatesConverter.convert(amount: amount, from: currentRate, to: rate))
+        let amountToPresent = RatesConverter.convert(amount: amount, from: currentRate, to: rate)
+        amountField?.text = RatesFormatter.displayText(amountToPresent)
     }
 
     func becomeActive() {

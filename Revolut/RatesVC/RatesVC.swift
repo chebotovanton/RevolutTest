@@ -78,6 +78,12 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         }
     }
 
+    //MARK: - UIScrollViewDelegate
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+
     //MARK: - RatesLoaderDelegate
 
     func didReceiveRates(_ rates: [Rate]) {
