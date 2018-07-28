@@ -14,6 +14,7 @@
 		9F16C215210BB87200729880 /* RatesConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C214210BB87200729880 /* RatesConverterTests.swift */; };
 		9F16C218210C522A00729880 /* RatesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C216210C521D00729880 /* RatesFormatter.swift */; };
 		9F16C21A210C95BD00729880 /* RatesFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C219210C95BD00729880 /* RatesFormatterTests.swift */; };
+		9F16C21E210CA2C800729880 /* FlagUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C21D210CA2C800729880 /* FlagUrlFactory.swift */; };
 		9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF2210A328C008F2827 /* AppDelegate.swift */; };
 		9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF4210A328C008F2827 /* RatesVC.swift */; };
 		9F31EAF8210A328C008F2827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F31EAF6210A328C008F2827 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		9F16C214210BB87200729880 /* RatesConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverterTests.swift; sourceTree = "<group>"; };
 		9F16C216210C521D00729880 /* RatesFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFormatter.swift; sourceTree = "<group>"; };
 		9F16C219210C95BD00729880 /* RatesFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFormatterTests.swift; sourceTree = "<group>"; };
+		9F16C21D210CA2C800729880 /* FlagUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagUrlFactory.swift; sourceTree = "<group>"; };
 		9F31EAEF210A328C008F2827 /* Revolut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revolut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F31EAF2210A328C008F2827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F31EAF4210A328C008F2827 /* RatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVC.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				9F16C20E210BAF7D00729880 /* RatesSorter.swift */,
 				9F16C212210BB7B500729880 /* RatesConverter.swift */,
 				9F16C216210C521D00729880 /* RatesFormatter.swift */,
+				9F16C21D210CA2C800729880 /* FlagUrlFactory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -347,12 +350,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Revolut/Pods-Revolut-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -388,6 +391,7 @@
 				9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */,
 				9F16C213210BB7B500729880 /* RatesConverter.swift in Sources */,
 				9F16C218210C522A00729880 /* RatesFormatter.swift in Sources */,
+				9F16C21E210CA2C800729880 /* FlagUrlFactory.swift in Sources */,
 				9F16C20F210BAF7D00729880 /* RatesSorter.swift in Sources */,
 				9F31EB25210A4523008F2827 /* RatesLoader.swift in Sources */,
 				9F31EB33210A47D2008F2827 /* Rate.swift in Sources */,

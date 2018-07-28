@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 protocol RateCellDelegate: class {
     func amountChanged(_ newAmount: Double, rate: Rate)
@@ -24,6 +25,9 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
 
         amountField?.keyboardType = .decimalPad
         underline?.backgroundColor = RateCell.grayColor
+
+        flagView?.layer.cornerRadius = 20
+        flagView?.clipsToBounds = true
     }
 
     func setup(rate: Rate, amount: Double, currentRate: Rate) {
@@ -33,6 +37,9 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
         //warning: move to some converter
         let amountToPresent = RatesConverter.convert(amount: amount, from: currentRate, to: rate)
         amountField?.text = RatesFormatter.displayText(amountToPresent)
+
+        let urlString = FlagUrlFactory.countryFlagUrl(rate.code)
+        flagView?.sd_setImage(with: URL(string: urlString), completed: nil)
     }
 
     func becomeActive() {

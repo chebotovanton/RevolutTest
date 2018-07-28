@@ -6,5 +6,5 @@ use_frameworks!
 target 'Revolut' do
     pod 'SwiftLint'
     pod 'Alamofire', '~> 4.7'
-    pod "PromiseKit", "~> 6.0"
+    pod 'SDWebImage'
 end
