@@ -1,4 +1,5 @@
 import XCTest
+@testable import Revolut
 
 class RatesConverterTests: XCTestCase {
     
