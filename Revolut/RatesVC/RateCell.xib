@@ -76,6 +76,7 @@
                 <outlet property="codeLabel" destination="dWT-Ee-69U" id="rOR-uj-mdY"/>
                 <outlet property="descriptionLabel" destination="0Zt-eT-dfP" id="IXR-4K-OY6"/>
                 <outlet property="flagView" destination="yXy-Ba-LJq" id="lnM-HN-fEf"/>
+                <outlet property="underline" destination="46r-6T-LpF" id="w8K-Eu-Pkp"/>
             </connections>
             <point key="canvasLocation" x="-24" y="63"/>
         </collectionViewCell>
