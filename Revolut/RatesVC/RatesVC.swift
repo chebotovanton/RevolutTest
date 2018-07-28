@@ -92,6 +92,9 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             collectionView?.reloadData()
         } else {
             self.rates = RatesSorter.reorderRates(newRates: rates, oldRates: self.rates)
+            if let newCurrentRate = self.rates.first, newCurrentRate.code == currentRate.code {
+                currentRate = newCurrentRate
+            }
             updateVisibleCells()
         }
     }
