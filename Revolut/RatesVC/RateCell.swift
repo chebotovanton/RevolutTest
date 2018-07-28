@@ -3,6 +3,7 @@ import SDWebImage
 
 protocol RateCellDelegate: class {
     func amountChanged(_ newAmount: Double, rate: Rate)
+    func selectRate(rate: Rate, amount: Double)
 }
 
 class RateCell: UICollectionViewCell, UITextFieldDelegate {
@@ -34,7 +35,7 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
         self.rate = rate
         codeLabel?.text = rate.code
         descriptionLabel?.text = Locale.current.localizedString(forCurrencyCode: rate.code)
-        //warning: move to some converter
+        
         let amountToPresent = RatesConverter.convert(amount: amount, from: currentRate, to: rate)
         amountField?.text = RatesFormatter.displayText(amountToPresent)
 
@@ -65,6 +66,9 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         underline?.backgroundColor = RateCell.selectedColor
+        if let text = textField.text, let amount = Double(text), let rate = rate {
+            delegate?.selectRate(rate: rate, amount: amount)
+        }
 
         return true
     }

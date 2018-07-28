@@ -33,6 +33,7 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         })
         collectionView?.reloadItems(at: pathsToReload!)
     }
+    
 
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
@@ -62,20 +63,7 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? RateCell, let selectedRate = cell.rate else { return }
 
-        //tests?
-        if let index = rates.index(where: { selectedRate.code == $0.code }) {
-            rates.remove(at: index)
-            rates.insert(selectedRate, at: 0)
-
-            let newIndexPath = IndexPath(item: 0, section: indexPath.section)
-            collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
-            collectionView.performBatchUpdates({
-                collectionView.moveItem(at: indexPath, to: newIndexPath)
-            }) { (finished) in
-                cell.becomeActive()
-                self.currentRate = selectedRate
-            }
-        }
+        selectRate(rate: selectedRate, amount: RatesConverter.convert(amount: currentValue, from: currentRate, to: selectedRate))
     }
 
     //MARK: - UIScrollViewDelegate
@@ -107,5 +95,22 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
 
         updateVisibleCells()
     }
-}
 
+    func selectRate(rate: Rate, amount: Double) {
+        //warning: Is it ok?
+        if let index = rates.index(where: { rate.code == $0.code }) {
+            rates.remove(at: index)
+            rates.insert(rate, at: 0)
+
+            currentRate = rate
+            currentValue = amount
+
+            let newIndexPath = IndexPath(item: 0, section: 0)
+            let oldIndexPath = IndexPath(item: index, section: 0)
+            collectionView?.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
+            collectionView?.performBatchUpdates({
+                collectionView?.moveItem(at: oldIndexPath, to: newIndexPath)
+            })
+        }
+    }
+}
