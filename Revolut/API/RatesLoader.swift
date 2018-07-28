@@ -1,5 +1,4 @@
 import Alamofire
-import PromiseKit
 
 protocol RatesLoaderDelegate: class {
     func didReceiveRates(_ rates: [Rate])
@@ -8,32 +7,29 @@ protocol RatesLoaderDelegate: class {
 class RatesLoader {
 
     weak var delegate: RatesLoaderDelegate?
+    private let kBaseUrl = "https://revolut.duckdns.org/latest?base="
 
     func loadRates(baseCode: String) {
         addStatusBarActivityIndicator()
-        let url = "https://revolut.duckdns.org/latest?base=" + baseCode
+        let url = kBaseUrl + baseCode
         Alamofire.request(url).responseJSON { [weak self] (response) in
-            guard let rawValue = response.result.value as? [String : Any] else {
+            if let rawValue = response.result.value as? [String : Any], var rates = ResultsParser.parseResults(rawValue) {
+                rates.insert(Rate(code: baseCode, value: 1), at: 0)
+
+                self?.delegate?.didReceiveRates(rates)
+                self?.removeStatusBarActivityIndicator()
+            } else {
                 self?.handleLoadingError()
-                return
             }
 
-            guard let rates = ResultsParser.parseResults(rawValue) else  {
-                self?.handleParsingError()
-                return
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self?.loadRates(baseCode: baseCode)
             }
-
-            self?.delegate?.didReceiveRates(rates)
-            self?.removeStatusBarActivityIndicator()
         }
-        //restart in 1 second
+
     }
 
     private func handleLoadingError() {
-        //do nothing
-    }
-
-    private func handleParsingError() {
         //do nothing
     }
 

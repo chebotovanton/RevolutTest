@@ -37,6 +37,9 @@
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="gTV-IL-0wX" id="Rgg-rM-4uQ"/>
+                        </connections>
                     </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46r-6T-LpF" userLabel="Underline">
                         <rect key="frame" x="346" y="39.5" width="63" height="1"/>

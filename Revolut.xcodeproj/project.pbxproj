@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		28ABE725428B549CCC7B0FEC /* Pods_Revolut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88190832248CB29274E6A6CA /* Pods_Revolut.framework */; };
+		9F16C20F210BAF7D00729880 /* RatesSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C20E210BAF7D00729880 /* RatesSorter.swift */; };
+		9F16C211210BB1A900729880 /* RatesSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C210210BB1A900729880 /* RatesSorterTests.swift */; };
+		9F16C213210BB7B500729880 /* RatesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C212210BB7B500729880 /* RatesConverter.swift */; };
+		9F16C215210BB87200729880 /* RatesConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C214210BB87200729880 /* RatesConverterTests.swift */; };
 		9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF2210A328C008F2827 /* AppDelegate.swift */; };
 		9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF4210A328C008F2827 /* RatesVC.swift */; };
 		9F31EAF8210A328C008F2827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F31EAF6210A328C008F2827 /* Main.storyboard */; };
@@ -44,6 +48,10 @@
 		656CA5EE26D4C47382AE3CA3 /* Pods-Revolut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolut.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revolut/Pods-Revolut.release.xcconfig"; sourceTree = "<group>"; };
 		72D6862AFEA191183B313C81 /* Pods-Revolut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revolut/Pods-Revolut.debug.xcconfig"; sourceTree = "<group>"; };
 		88190832248CB29274E6A6CA /* Pods_Revolut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revolut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F16C20E210BAF7D00729880 /* RatesSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSorter.swift; sourceTree = "<group>"; };
+		9F16C210210BB1A900729880 /* RatesSorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSorterTests.swift; sourceTree = "<group>"; };
+		9F16C212210BB7B500729880 /* RatesConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverter.swift; sourceTree = "<group>"; };
+		9F16C214210BB87200729880 /* RatesConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverterTests.swift; sourceTree = "<group>"; };
 		9F31EAEF210A328C008F2827 /* Revolut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revolut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F31EAF2210A328C008F2827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F31EAF4210A328C008F2827 /* RatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVC.swift; sourceTree = "<group>"; };
@@ -108,6 +116,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F16C209210B4B4300729880 /* RatesVC */ = {
+			isa = PBXGroup;
+			children = (
+				9F31EAF4210A328C008F2827 /* RatesVC.swift */,
+				9F31EB20210A3A25008F2827 /* RateCell.swift */,
+				9F31EB21210A3A25008F2827 /* RateCell.xib */,
+			);
+			path = RatesVC;
+			sourceTree = "<group>";
+		};
+		9F16C20D210BAF6A00729880 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F16C20E210BAF7D00729880 /* RatesSorter.swift */,
+				9F16C212210BB7B500729880 /* RatesConverter.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9F31EAE6210A328C008F2827 = {
 			isa = PBXGroup;
 			children = (
@@ -133,11 +160,10 @@
 		9F31EAF1210A328C008F2827 /* Revolut */ = {
 			isa = PBXGroup;
 			children = (
+				9F16C20D210BAF6A00729880 /* Utils */,
+				9F16C209210B4B4300729880 /* RatesVC */,
 				9F31EB31210A47BD008F2827 /* API */,
 				9F31EAF2210A328C008F2827 /* AppDelegate.swift */,
-				9F31EAF4210A328C008F2827 /* RatesVC.swift */,
-				9F31EB20210A3A25008F2827 /* RateCell.swift */,
-				9F31EB21210A3A25008F2827 /* RateCell.xib */,
 				9F31EAF6210A328C008F2827 /* Main.storyboard */,
 				9F31EAF9210A328D008F2827 /* Assets.xcassets */,
 				9F31EAFB210A328D008F2827 /* LaunchScreen.storyboard */,
@@ -152,6 +178,8 @@
 				9F31EB07210A328D008F2827 /* RevolutTests.swift */,
 				9F31EB09210A328D008F2827 /* Info.plist */,
 				9F31EB36210A677F008F2827 /* ResultsParserTests.swift */,
+				9F16C210210BB1A900729880 /* RatesSorterTests.swift */,
+				9F16C214210BB87200729880 /* RatesConverterTests.swift */,
 			);
 			path = RevolutTests;
 			sourceTree = "<group>";
@@ -352,6 +380,8 @@
 			files = (
 				9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */,
 				9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */,
+				9F16C213210BB7B500729880 /* RatesConverter.swift in Sources */,
+				9F16C20F210BAF7D00729880 /* RatesSorter.swift in Sources */,
 				9F31EB25210A4523008F2827 /* RatesLoader.swift in Sources */,
 				9F31EB33210A47D2008F2827 /* Rate.swift in Sources */,
 				9F31EB22210A3A25008F2827 /* RateCell.swift in Sources */,
@@ -364,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F31EB08210A328D008F2827 /* RevolutTests.swift in Sources */,
+				9F16C211210BB1A900729880 /* RatesSorterTests.swift in Sources */,
+				9F16C215210BB87200729880 /* RatesConverterTests.swift in Sources */,
 				9F31EB37210A677F008F2827 /* ResultsParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +565,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = Revolut/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.Revolut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -549,7 +584,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = Revolut/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.Revolut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -565,7 +603,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -582,7 +624,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -598,7 +644,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -614,7 +664,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = RevolutUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chebotov.RevolutUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
