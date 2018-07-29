@@ -9,6 +9,7 @@ class ToStringFormatter {
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         formatter.minimumIntegerDigits = 1
+        formatter.usesGroupingSeparator = false
 
         return formatter
     }()

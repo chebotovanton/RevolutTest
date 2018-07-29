@@ -17,7 +17,6 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
 
         let layout = UICollectionViewFlowLayout()
         collectionView?.setCollectionViewLayout(layout, animated: false)
-        collectionView?.alwaysBounceVertical = true
 
         ratesLoader.delegate = self
         ratesLoader.loadRates(baseCode: "EUR")
@@ -63,18 +62,29 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? RateCell, let selectedRate = cell.rate else { return }
 
-        selectRate(rate: selectedRate, amount: RatesConverter.convert(amount: currentValue, from: currentRate, to: selectedRate))
+        selectRate(rate: selectedRate, amount: RatesConverter.convert(amount: currentValue, fromRate: currentRate, toRate: selectedRate))
     }
 
     // MARK: - UIScrollViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        view.endEditing(true)
+        switch scrollView.panGestureRecognizer.state {
+        case .began:
+            view.endEditing(true)
+        case .changed:
+            view.endEditing(true)
+        case .possible: break
+        case .ended: break
+        case .cancelled: break
+        case .failed: break
+        }
+
     }
 
     // MARK: - RatesLoaderDelegate
 
     func didReceiveRates(_ rates: [Rate]) {
+        // warning: can we use reorderRates in both cases?
         if self.rates.count == 0 {
             self.rates = rates
             collectionView?.reloadData()
@@ -110,6 +120,10 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             collectionView?.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
             collectionView?.performBatchUpdates({
                 collectionView?.moveItem(at: oldIndexPath, to: newIndexPath)
+            }, completion: { (_) in
+                if let rateCell = self.collectionView?.cellForItem(at: newIndexPath) as? RateCell {
+                    rateCell.becomeActive()
+                }
             })
         }
     }

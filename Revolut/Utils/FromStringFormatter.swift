@@ -4,6 +4,8 @@ class FromStringFormatter {
 
     private static let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+
         return formatter
     }()
 

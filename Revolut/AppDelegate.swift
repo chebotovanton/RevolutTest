@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Revolut
-//
-//  Created by Anton Chebotov on 26/07/2018.
-//  Copyright © 2018 Anton Chebotov. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

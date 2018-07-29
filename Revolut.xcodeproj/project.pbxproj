@@ -13,7 +13,7 @@
 		9F16C213210BB7B500729880 /* RatesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C212210BB7B500729880 /* RatesConverter.swift */; };
 		9F16C215210BB87200729880 /* RatesConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C214210BB87200729880 /* RatesConverterTests.swift */; };
 		9F16C218210C522A00729880 /* ToStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C216210C521D00729880 /* ToStringFormatter.swift */; };
-		9F16C21A210C95BD00729880 /* RatesFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C219210C95BD00729880 /* RatesFormatterTests.swift */; };
+		9F16C21A210C95BD00729880 /* ToStringFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C219210C95BD00729880 /* ToStringFormatterTests.swift */; };
 		9F16C21E210CA2C800729880 /* FlagUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16C21D210CA2C800729880 /* FlagUrlFactory.swift */; };
 		9F31EAF3210A328C008F2827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF2210A328C008F2827 /* AppDelegate.swift */; };
 		9F31EAF5210A328C008F2827 /* RatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31EAF4210A328C008F2827 /* RatesVC.swift */; };
@@ -57,7 +57,7 @@
 		9F16C212210BB7B500729880 /* RatesConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverter.swift; sourceTree = "<group>"; };
 		9F16C214210BB87200729880 /* RatesConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesConverterTests.swift; sourceTree = "<group>"; };
 		9F16C216210C521D00729880 /* ToStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStringFormatter.swift; sourceTree = "<group>"; };
-		9F16C219210C95BD00729880 /* RatesFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFormatterTests.swift; sourceTree = "<group>"; };
+		9F16C219210C95BD00729880 /* ToStringFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStringFormatterTests.swift; sourceTree = "<group>"; };
 		9F16C21D210CA2C800729880 /* FlagUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagUrlFactory.swift; sourceTree = "<group>"; };
 		9F31EAEF210A328C008F2827 /* Revolut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revolut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F31EAF2210A328C008F2827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				9F31EB36210A677F008F2827 /* ResultsParserTests.swift */,
 				9F16C210210BB1A900729880 /* RatesSorterTests.swift */,
 				9F16C214210BB87200729880 /* RatesConverterTests.swift */,
-				9F16C219210C95BD00729880 /* RatesFormatterTests.swift */,
+				9F16C219210C95BD00729880 /* ToStringFormatterTests.swift */,
 				9F844734210DB2BE00CA8641 /* FromStringFormatterTests.swift */,
 			);
 			path = RevolutTests;
@@ -424,7 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F16C211210BB1A900729880 /* RatesSorterTests.swift in Sources */,
-				9F16C21A210C95BD00729880 /* RatesFormatterTests.swift in Sources */,
+				9F16C21A210C95BD00729880 /* ToStringFormatterTests.swift in Sources */,
 				9F16C215210BB87200729880 /* RatesConverterTests.swift in Sources */,
 				9F31EB37210A677F008F2827 /* ResultsParserTests.swift in Sources */,
 				9F844735210DB2BE00CA8641 /* FromStringFormatterTests.swift in Sources */,

@@ -32,7 +32,7 @@
                             <constraint firstAttribute="height" constant="40" id="a2L-bo-x0F"/>
                         </constraints>
                     </imageView>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="22.05" textAlignment="right" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="tKP-vm-P2r">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="22.05" placeholder="0" textAlignment="right" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="tKP-vm-P2r">
                         <rect key="frame" x="346" y="11.5" width="63" height="27"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>

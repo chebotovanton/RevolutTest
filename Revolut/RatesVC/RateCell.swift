@@ -36,7 +36,7 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
         codeLabel?.text = rate.code
         descriptionLabel?.text = Locale.current.localizedString(forCurrencyCode: rate.code)
 
-        let amountToPresent = RatesConverter.convert(amount: amount, from: currentRate, to: rate)
+        let amountToPresent = RatesConverter.convert(amount: amount, fromRate: currentRate, toRate: rate)
         amountField?.text = ToStringFormatter.displayText(amountToPresent)
 
         let urlString = FlagUrlFactory.countryFlagUrl(rate.code)
@@ -48,9 +48,8 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
         let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
-        guard  let amount = FromStringFormatter.amountFrom(updatedString) else { return false }
+        guard let amount = FromStringFormatter.amountFrom(updatedString) else { return false }
 
         if let rate = rate {
             delegate?.amountChanged(amount, rate: rate)
@@ -61,7 +60,7 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         underline?.backgroundColor = RateCell.selectedColor
-        if let text = textField.text, let amount = Double(text), let rate = rate {
+        if let text = textField.text, let amount = FromStringFormatter.amountFrom(text), let rate = rate {
             delegate?.selectRate(rate: rate, amount: amount)
         }
 
