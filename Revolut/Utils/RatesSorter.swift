@@ -15,5 +15,5 @@ class RatesSorter {
 
         return result
     }
-    
+
 }

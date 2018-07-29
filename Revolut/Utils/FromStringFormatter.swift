@@ -1,12 +1,11 @@
-import UIKit
+import Foundation
 
-class FromStringFormatter: NSObject {
+class FromStringFormatter {
 
     private static let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         return formatter
     }()
-
 
     static func amountFrom(_ string: String?) -> Double? {
         if let unwrappedString = string, unwrappedString.count > 0 {

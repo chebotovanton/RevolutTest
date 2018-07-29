@@ -1,6 +1,6 @@
 import Foundation
 
-class RatesFormatter {
+class ToStringFormatter {
 
     private static let formatter: NumberFormatter = {
         let formatter = NumberFormatter()

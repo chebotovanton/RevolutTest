@@ -12,7 +12,7 @@ class ResultsParserTests: XCTestCase {
                         "CNY" : 7.9406,
                         "CZK" : 25.939]
 
-        let dict: [String : Any] = ["base" : "EUR",
+        let dict: [String: Any] = ["base" : "EUR",
                                     "date" : "2018-07-20",
                                     "rates": rawRates]
 
@@ -24,11 +24,11 @@ class ResultsParserTests: XCTestCase {
     }
 
     func testWrongValue() {
-        let rawRates: [String : Any] = ["AUD" : 1.5857,
+        let rawRates: [String: Any] = ["AUD" : 1.5857,
                         "BGN" : "wrongValue"]
-        let dict: [String : Any] = ["base" : "EUR",
+        let dict: [String: Any] = ["base" : "EUR",
                                     "date" : "2018-07-20",
-                                    "rates": rawRates]
+                                    "rates" : rawRates]
 
         let rates = ResultsParser.parseResults(dict)
 
@@ -36,15 +36,15 @@ class ResultsParserTests: XCTestCase {
     }
 
     func testWrongResponseStructure() {
-        let rawRates: [String : Any] = ["AUD" : 1.5857,
+        let rawRates: [String: Any] = ["AUD" : 1.5857,
                                         "BGN" : 1.9606]
-        let dict: [String : Any] = ["base" : "EUR",
+        let dict: [String: Any] = ["base" : "EUR",
                                     "date" : "2018-07-20",
-                                    "wrongKey" : rawRates]
+                                    "wrongKey": rawRates]
 
         let rates = ResultsParser.parseResults(dict)
 
         XCTAssertNil(rates)
     }
-        
+
 }

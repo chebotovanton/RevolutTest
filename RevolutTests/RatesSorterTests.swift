@@ -70,5 +70,4 @@ class RatesSorterTests: XCTestCase {
         XCTAssertEqual(sortedRates[2].value, 6)
     }
 
-    
 }

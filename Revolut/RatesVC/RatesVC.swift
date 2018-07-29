@@ -33,9 +33,8 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         })
         collectionView?.reloadItems(at: pathsToReload!)
     }
-    
 
-    //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+    // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rates.count
@@ -51,11 +50,12 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RateCell.kCellIdentifier, for: indexPath) as! RateCell
-
-        let rate = rates[indexPath.item]
-        cell.setup(rate: rate, amount: currentValue, currentRate: currentRate)
-        cell.delegate = self
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RateCell.kCellIdentifier, for: indexPath)
+        if let rateCell = cell as? RateCell {
+            let rate = rates[indexPath.item]
+            rateCell.setup(rate: rate, amount: currentValue, currentRate: currentRate)
+            rateCell.delegate = self
+        }
 
         return cell
     }
@@ -66,13 +66,13 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         selectRate(rate: selectedRate, amount: RatesConverter.convert(amount: currentValue, from: currentRate, to: selectedRate))
     }
 
-    //MARK: - UIScrollViewDelegate
+    // MARK: - UIScrollViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
 
-    //MARK: - RatesLoaderDelegate
+    // MARK: - RatesLoaderDelegate
 
     func didReceiveRates(_ rates: [Rate]) {
         if self.rates.count == 0 {
@@ -87,7 +87,7 @@ class RatesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         }
     }
 
-    //MARK: - RateCellDelegate
+    // MARK: - RateCellDelegate
 
     func amountChanged(_ newAmount: Double, rate: Rate) {
         currentRate = rate

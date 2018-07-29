@@ -13,7 +13,7 @@ class RatesLoader {
         addStatusBarActivityIndicator()
         let url = kBaseUrl + baseCode
         Alamofire.request(url).responseJSON { [weak self] (response) in
-            if let rawValue = response.result.value as? [String : Any], var rates = ResultsParser.parseResults(rawValue) {
+            if let rawValue = response.result.value as? [String: Any], var rates = ResultsParser.parseResults(rawValue) {
                 rates.insert(Rate(code: baseCode, value: 1), at: 0)
 
                 self?.delegate?.didReceiveRates(rates)

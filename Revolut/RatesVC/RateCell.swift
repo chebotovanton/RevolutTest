@@ -35,9 +35,9 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
         self.rate = rate
         codeLabel?.text = rate.code
         descriptionLabel?.text = Locale.current.localizedString(forCurrencyCode: rate.code)
-        
+
         let amountToPresent = RatesConverter.convert(amount: amount, from: currentRate, to: rate)
-        amountField?.text = RatesFormatter.displayText(amountToPresent)
+        amountField?.text = ToStringFormatter.displayText(amountToPresent)
 
         let urlString = FlagUrlFactory.countryFlagUrl(rate.code)
         flagView?.sd_setImage(with: URL(string: urlString), completed: nil)
