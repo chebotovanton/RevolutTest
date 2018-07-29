@@ -49,17 +49,12 @@ class RateCell: UICollectionViewCell, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-        //warning: fix this mess
-        var updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? "0"
-        if updatedString.count == 0 {
-            updatedString = "0"
+        let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
+        guard  let amount = FromStringFormatter.amountFrom(updatedString) else { return false }
+
+        if let rate = rate {
+            delegate?.amountChanged(amount, rate: rate)
         }
-
-        //warning: if updated string contains two dots, return false + tests
-        guard let newValue = Double(updatedString) else { return false }
-        guard let rate = rate else { return true }
-
-        delegate?.amountChanged(newValue, rate: rate)
 
         return true
     }
